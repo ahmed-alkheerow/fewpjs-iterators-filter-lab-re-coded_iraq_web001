@@ -1,17 +1,13 @@
 // Code your solution here
-const testVar = {};
-
-function testFunc() {
-	return 'hi';
+function findMatching(arr, string) {
+  return arr.filter(element => element === string.toLowerCase() || element === string.toUpperCase() || element === string.charAt(0).toUpperCase() + string.slice(1))
 }
 
-const record = [ { year: '2018', result: 'L' }, { year: '2017', result: 'W' }, { year: '2016', result: 'N/A' } ];
+function fuzzyMatch(arr, string) {
+  return arr.filter(element => element.startsWith(string))
+}
 
-function superbowlWin(record) {
-	let result = record.find((record) => record.result === 'W');
-	if (result) {
-		return result.year;
-	} else {
-		return undefined;
-	}
+function matchName(arrOfObjects, string) {
+  return arrOfObjects.filter(obj => obj.name === string)
+}
 }
